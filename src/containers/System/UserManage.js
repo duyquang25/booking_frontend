@@ -3,17 +3,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './UserManage.scss'
 
-import { getAllUsers} from '../../services/userService'
+import ModalUser from './ModalUser';
+
+import { getAllUsers, createNewUserService} from '../../services/userService'
 class UserManage extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            arrUsers: []
+            arrUsers: [],
+            isOpenModalUser: false,
         }
     }
 
     async componentDidMount() {
+        await this.getAllUsersFromReact()
+    }
+
+    getAllUsersFromReact = async () =>{
         let response = await getAllUsers('All')
         if(response && response.errCode === 0) {
             this.setState({
@@ -23,6 +30,34 @@ class UserManage extends Component {
     }
 
 
+    handleAddNewUser = () => {
+        this.setState({
+            isOpenModalUser: true,
+        })
+    }
+
+    toogleUserModel = () => {
+        this.setState({
+            isOpenModalUser: !this.state.isOpenModalUser,
+        })
+    }
+
+
+    createNewUser = async (data) => {
+        try{
+            let response = await createNewUserService(data)
+            if(response && response.errCode !== 0){
+                alert(response.errMessage)
+            } else {
+                await this.getAllUsersFromReact();
+                this.setState({
+                    isOpenModalUser: false
+                })
+            }
+        } catch(err){
+            console.log(err)
+        }
+    }
     /**Life cycle 
      * Run Component
      * 1. Run constructor -> init state
@@ -34,12 +69,25 @@ class UserManage extends Component {
 
     render() {
         let arrUsers = this.state.arrUsers;
-        console.log(arrUsers)
         return (
-            <div className="user-container">
+            <div className="user-container container" >
+                <ModalUser
+                    isOpen = {this.state.isOpenModalUser}
+                    toggleFromParent={this.toogleUserModel}
+                    createNewUser={this.createNewUser}
+                >
+
+                </ModalUser>
                 <div className="text-center title">Manage users</div>
-                
-                <table id="customers" className="container mt-4">
+                <button 
+                    className="btn btn-primary px-3"
+                    onClick = {this.handleAddNewUser}
+                >
+                   <i className="fas fa-plus"></i>
+                   Create new user
+                </button>
+                <table id="customers" className=" mt-4" > 
+                <tbody>
                     <tr>
                         <th>Email</th>
                         <th>First Name</th>
@@ -47,7 +95,7 @@ class UserManage extends Component {
                         <th>Address</th>
                         <th>Action</th>
                     </tr>
-
+                   
                         { arrUsers && arrUsers.map((item, index) => {
                             return(
                                 <tr>
@@ -63,7 +111,7 @@ class UserManage extends Component {
                                 )
                             })
                         }
-    
+                    </tbody>
                     
                 </table>
             </div>
