@@ -1,7 +1,7 @@
 .home-header-container{
-    height: 60px;
+    height: 80px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 30px;
 
     .home-header-content{
         width: 100%;
@@ -9,18 +9,21 @@
         display: flex;
 
         .left-content{
+            padding-left: 80px;
             cursor: pointer;
             display: flex;
             align-items: center;
             width: 25%;
+            gap: 20px;
+            justify-content: flex-start;
             i{
                 font-size: 25px;
                 color: grey;
             }
             .header-logo{
                 background: url('../../assets/logo.svg') center center no-repeat;
-                height: 100%;
-                width: 100%;
+                height: 70%;
+                width: 70%;
             }
         }
         .center-content{
@@ -28,8 +31,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 15px;
 
             .child-content{
+
+                cursor: pointer;
                 .sub-title{
                     font-weight: 400;
                     font-size: 13px;
@@ -40,8 +46,154 @@
             width: 25%;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
+            color: #49bce2;
+            cursor: pointer;
+
+            .support{
+                padding-right: 70px;
+
+                i{
+                    font-size: 15px;
+                }
+            }
+
+            .language-vi {
+                margin-right: 10px;
+
+                .active{
+                    color: orange;
+                }
+            }
+            .language-en {
+                margin: 0 10px;
+
+                .active{
+                    color:#f7d800;
+                }
+            }
         }
         
     }
+}
+
+.home-header-banner{
+    background: url('../../assets/banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+
+
+    .home-header-baner-content{
+
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.1));
+        color: #333;
+        display: flex;
+        flex-direction: column;
+
+        .content-up{
+
+
+            .title1 {
+                padding-top: 40px;
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px #333;
+                color: #fff;
+            }
+            .title2 {
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px #333;
+                color: #fff;
+                font-weight: 700;
+        
+            }
+            .search {
+                width: fit-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                padding: 10px;
+                border-radius: 100px;
+                background: #f7d800;
+        
+                i{
+                    margin: 0 10px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+        
+                input{
+                    height: 40px;
+                    width: 400px;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                }
+        }
+    
+
+      
+        }
+
+        .content-down{
+            background-image: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+            padding-top: 155px;
+            padding-left: 250px;
+            padding-right: 200px;
+            .options {
+
+                
+                
+                text-align: center;
+                justify-content: center;
+                display: flex;
+                gap: 50px;
+                
+                justify-content: space-around;
+
+                .option-child{
+                    width: 115px;
+                    cursor: pointer;
+
+                    .icon-child{
+                        background-color: #fff;
+                        width: 50px;
+                        height: 50px;
+                        padding: 15px;
+                        border-radius: 50%;
+                        margin: 0 auto;
+                        border: 1px solid #49bce2;
+                        
+                        i{
+                            font-size: 20px;
+                            color: #49bce2;
+                        }
+                        
+                    }
+
+                    &:hover .text-child{
+                        color: #49bce2;
+                    }
+
+                    .text-child{
+                        margin-top: 10px;
+                        font-weight: 600;
+                        font-size: 17px;
+
+                    }
+                }
+            }
+        }
+        
+    }
+
+    
 }
