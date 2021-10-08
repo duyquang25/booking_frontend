@@ -60,16 +60,27 @@
 
             .language-vi {
                 margin-right: 10px;
+                opacity: 0.5;
 
-                .active{
-                    color: orange;
+                &.active{
+                    span{
+                        color: blue;
+                        opacity: 1;
+                        font-weight: 600;
+                    }
+                    
                 }
             }
             .language-en {
                 margin: 0 10px;
-
-                .active{
-                    color:#f7d800;
+                opacity: 0.5;
+                &.active{
+                    span{
+                        color:blue;
+                        opacity: 1;
+                        font-weight: 600;
+                    }
+                    
                 }
             }
         }
