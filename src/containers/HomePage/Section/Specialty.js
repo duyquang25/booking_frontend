@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './Specialty.scss';
+import '../HomePage.scss';
 // import { FormattedMessage } from 'react-intl'
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 
 class Specialty extends Component {
 
 
     render() {
 
-        let settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1
-          };
+        
        
         return (
-           <div className="section-specialty">
-               <div className="specialty-container">
-                    <div className="specialty-header">
+           <div className="section-share section-specialty">
+               <div className="section-container">
+                    <div className="section-header">
                         <span className="title-section">
                             Chuyen Khoa
                         </span>
@@ -31,8 +22,8 @@ class Specialty extends Component {
                             Xem them
                         </button> 
                     </div>
-                    <div className="specialty-body">
-                    <Slider {...settings}>
+                    <div className="section-body">
+                    <Slider {...this.props.settings}>
                         <div className="specialty-custom">
                             <div className="bg-image" />
                             <div> Co xuong khop 1</div>
