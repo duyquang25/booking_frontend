@@ -35,6 +35,18 @@ class HandBook extends Component {
                          <div className="bg-image" />
                          <div className="handbook-info">Tiến sĩ, Bác sĩ Quang</div>
                     </div>                  
+                    <div className="handbook-custom">
+                         <div className="bg-image" />
+                         <div className="handbook-info">Tiến sĩ, Bác sĩ Quang</div>
+                    </div>                  
+                    <div className="handbook-custom">
+                         <div className="bg-image" />
+                         <div className="handbook-info">Tiến sĩ, Bác sĩ Quang</div>
+                    </div>                  
+                    <div className="handbook-custom">
+                         <div className="bg-image" />
+                         <div className="handbook-info">Tiến sĩ, Bác sĩ Quang</div>
+                    </div>                  
                  </Slider>
 
                  </div>
