@@ -13,8 +13,8 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'abc',
-            password: '123',
+            username: '',
+            password: '',
             errMessage: '',
         }
     }
@@ -47,6 +47,7 @@ class Login extends Component {
                 this.setState({
                     errMessage: data.message,
                 })
+                console.log('login fail')
             }
             if(data && data.errCode === 0){
                 // todo
