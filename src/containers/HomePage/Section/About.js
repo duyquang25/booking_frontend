@@ -15,7 +15,7 @@ class About extends Component {
                         <iframe 
                             width="100%" 
                             height="400" 
-                            src="https://www.youtube.com/embed/FyDQljKtWnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            src="https://www.youtube.com/embed/FyDQljKtWnI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                         </iframe>      
                     </div>
                     <div className="content-right">
